@@ -2,7 +2,7 @@
 
 This application connects to a fictional social media network. One endpoint registers a token and the other endpoint fetches posts made by fictional users across a 6 month period.
 
-Go to original git repository : [https://github.com/supermetrics-public/php-assignment](Click Here)
+Go to original git repository : [Click Here](https://github.com/supermetrics-public/php-assignment)
 
 ## Dependencies
 
