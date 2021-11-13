@@ -123,14 +123,16 @@ class FictionalDriver implements SocialDriverInterface
     {
         //Todo: retrieve current user data from  an auth service stub
         $userData = [
-            'email' => 'your@email.address',
-            'name'  => 'YourName',
+            'email' => 'dilan.net@gmail.com',
+            'name'  => 'Dilan',
         ];
 
         $response = $this->client->authRequest(self::REGISTER_TOKEN_URI, $userData);
+      
         $response = \GuzzleHttp\json_decode($response, true);
 
-        $token = $response['data']['sl_token'] ?? null;
+        $token =$response['data']['sl_token'] ?? null;
+       
         if (null === $token) {
             throw new BadResponseException('No access token returned');
         }

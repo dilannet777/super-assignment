@@ -18,4 +18,9 @@
             <directory suffix=".php">./app</directory>
         </whitelist>
     </filter>
+     <php>
+        <env name="SOCIAL_POST_RESPONSE_PATH" value="./tests/data/social-posts-response.json"/>
+        <env name="SOCIAL_POST_MONTH" value="November, 2021"/>
+        <env name="USER_PER_MONTH_EXPECTED_MEAN" value="3.17" />
+    </php>
 </phpunit>

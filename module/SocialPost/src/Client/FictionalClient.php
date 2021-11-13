@@ -100,6 +100,7 @@ class FictionalClient implements SocialClientInterface
 
         try {
             $response = $this->client->send($request);
+           
         } catch (ServerException $exception) {
             if ($this->isTokenInvalid($exception)) {
                 throw new InvalidTokenException();
