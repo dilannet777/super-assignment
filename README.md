@@ -1,4 +1,4 @@
-# super-assignment
+# supermetrix-assignment
 
 This application connects to a fictional social media network. One endpoint registers a token and the other endpoint fetches posts made by fictional users across a 6 month period.
 
