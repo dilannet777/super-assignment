@@ -67,7 +67,7 @@ class StatisticsController extends Controller
             $date   = $this->extractDate($params);
            
             $params = ParamsBuilder::reportStatsParams($date);
-            print_r($params);exit;
+            
             $posts = $this->socialService->fetchPosts();
     
             $stats = $this->statsService->calculateStats($posts, $params);
