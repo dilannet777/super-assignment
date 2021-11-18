@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace Tests\unit;
 
 use DateTime;
+use PDO;
 use PHPUnit\Framework\TestCase;
 use SocialPost\Dto\SocialPostTo;
-use Statistics\Calculator\NoopCalculator;
+use Statistics\Calculator\AveragePostsPerUser;
 use Statistics\Builder\ParamsBuilder;
 
 
@@ -50,8 +51,8 @@ class TestTest extends TestCase
 
 
         $posts = $jsonArray->data->posts;
-        $noopCalculator = new NoopCalculator();
-        $noopCalculator->setParameters($params);
+        $avePosts = new AveragePostsPerUser();
+        $avePosts->setParameters($params);
         foreach ($posts as $post) {
 
             $date = DateTime::createFromFormat(
@@ -68,10 +69,10 @@ class TestTest extends TestCase
                 ->setType($post->type ?? null)
                 ->setDate($date ?? null);
 
-            $noopCalculator->accumulateData($dto);
+                $avePosts->accumulateData($dto);
         }
 
-        $mean = $noopCalculator->calculate()->getValue();
+        $mean = $avePosts->calculate()->getValue();
         $this->assertTrue($mean == $expectedMean);
     }
 }
