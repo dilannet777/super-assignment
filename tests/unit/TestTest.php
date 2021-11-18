@@ -8,7 +8,7 @@ use DateTime;
 use PDO;
 use PHPUnit\Framework\TestCase;
 use SocialPost\Dto\SocialPostTo;
-use Statistics\Calculator\AveragePostsPerUser;
+use Statistics\Calculator\AveragePostPerUser;
 use Statistics\Builder\ParamsBuilder;
 
 
@@ -29,6 +29,8 @@ class TestTest extends TestCase
         $this->assertTrue(true);
     }
 
+   
+    //Tested avarage with answer which is defined in phpunit config file.
     public function testAvaragePostPerUserPerMonth(): void
     {
 
@@ -51,7 +53,7 @@ class TestTest extends TestCase
 
 
         $posts = $jsonArray->data->posts;
-        $avePosts = new AveragePostsPerUser();
+        $avePosts = new AveragePostPerUser();
         $avePosts->setParameters($params);
         foreach ($posts as $post) {
 

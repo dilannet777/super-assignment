@@ -7,7 +7,7 @@ namespace Statistics\Calculator;
 use SocialPost\Dto\SocialPostTo;
 use Statistics\Dto\StatisticsTo;
 
-class AveragePostsPerUser extends AbstractCalculator
+class AveragePostPerUser extends AbstractCalculator
 {
 
     protected const UNITS = 'posts';
